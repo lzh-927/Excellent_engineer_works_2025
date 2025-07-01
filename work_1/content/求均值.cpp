@@ -6,9 +6,11 @@ int main()
 	FILE*pf = fopen("input.txt","w");
 	srand((unsigned int)time(NULL));
 	int j=0;
+	int randomNums[5];
 	for(j=0;j<5;j++)
 	{
 		int num=rand() %100;
+		randomNums[j]=num;
 		fprintf(pf,"%d ",num);
 	}
 	fclose(pf);
@@ -27,6 +29,12 @@ int main()
 	FILE* pf2 = fopen("output.txt","w");
 	fprintf(pf2,"%f",avg);
 	fclose(pf2);
+	for (j=0;j<5;j++)
+	{
+		printf("%d ",randomNums[j]);
+	}
+	printf("\n");
+	printf("%21.f\n",avg);
 	return 0;
 }
 
